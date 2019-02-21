@@ -1,0 +1,11 @@
+[Unit]
+Description=Microservices Status Page
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/vigil -c /usr/local/etc/vigil.cfg
+Type=exec
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
