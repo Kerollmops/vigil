@@ -65,7 +65,11 @@ debug-assertions = false
 maintainer = "Valerian Saliou <valerian@valeriansaliou.name>"
 copyright = "2019, Valerian Saliou"
 depends = "$auto, systemd"
-conf-files = ["/usr/local/etc/vigil.cfg", "/etc/systemd/system/vigil.service"]
+conf-files = [
+    "/usr/local/etc/vigil.cfg",
+    "/usr/local/etc/vigil/assets",
+    "/etc/systemd/system/vigil.service"
+]
 extended-description = "Microservices Status Page"
 section = "admin"
 priority = "optional"
@@ -73,4 +77,5 @@ assets = [
     ["target/release/vigil", "/usr/local/bin/", "755"],
     ["vigil.service", "/etc/systemd/system/", "644"],
     ["vigil.cfg", "/usr/local/etc/", "644"],
+    ["res/assets", "/usr/local/etc/vigil", "644"],
 ]
